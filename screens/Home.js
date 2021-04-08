@@ -1,31 +1,27 @@
 import * as React from 'react';
-import { Button, View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
+import { ScrollView } from 'react-native-gesture-handler';
 
-
-export default function HomeScreen({ navigation }) {
+export default function Home({ navigation }) {
     return (
-        <View style={styles.container}>
-            <Button
-                style={styles.btn}
-                title="Details"
-                onPress={() => navigation.navigate('Details')}
-            />
-            <Button
-                style={{margin: 50}}
+        <ScrollView style={styles.container}>
+            <TouchableOpacity
                 title="Slide"
                 onPress={() => navigation.navigate('Slide')}
-            />
-        </View>
+            >
+                <Text style={styles.text}>Learn How to build slide</Text>
+            </TouchableOpacity>
+        </ScrollView>
     );
 }
 
 const styles = StyleSheet.create({
     container: {
-        padding:15,
-        flex: 1,
-        flexDirection:'column'
+        paddingTop: 50,
+        paddingHorizontal: 10,
+        backgroundColor: '#d35400',
     },
-    btn: {
-        marginVertical:15,
+    text: {
+        color: '#000'
     }
 })
